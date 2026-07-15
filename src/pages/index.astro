@@ -1,17 +1,52 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import { services } from '../data/services';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Wampus Labs | Practical technology for small business" description="Managed IT, automation, digital signage, and custom software for businesses in Sauk Prairie and beyond.">
+  <section class="hero section">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">Sauk Prairie, Wisconsin</p>
+        <h1>Technology should make work <span>easier.</span></h1>
+        <p class="hero-copy">We help small businesses keep IT running, cut out repetitive work, manage digital signs, and build useful software.</p>
+        <div class="button-row">
+          <a class="button button-primary" href="/contact">Tell us what you need</a>
+          <a class="button button-secondary" href="/services">Explore services</a>
+        </div>
+      </div>
+      <aside class="hero-note" aria-label="How Wampus Labs works">
+        <p class="note-label">The short version</p>
+        <p>We listen first, explain things clearly, and build the simplest solution that gets the job done.</p>
+        <div class="status-line"><span></span> Local, practical, and ready to help.</div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section services-preview" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="section-heading split-heading">
+        <div><p class="eyebrow">What we do</p><h2 id="services-heading">Four ways we can help.</h2></div>
+        <p>No giant package required. Start with the problem in front of you and grow from there.</p>
+      </div>
+      <div class="service-grid">{services.map((service) => <ServiceCard {...service} />)}</div>
+    </div>
+  </section>
+
+  <section class="section approach-section">
+    <div class="container two-column">
+      <div><p class="eyebrow">A better fit</p><h2>Useful help, minus the sales pitch.</h2></div>
+      <div class="prose-large">
+        <p>You shouldn’t need a dictionary to talk about your own technology. We’ll tell you what’s working, what isn’t, and what’s actually worth fixing.</p>
+        <p>If the simple option is the right one, that’s the one we’ll recommend.</p>
+        <a class="text-link" href="/about">Why Wampus Labs <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-section"><div class="container cta-box">
+    <div><p class="eyebrow">Have a stubborn tech problem?</p><h2>Let’s figure it out.</h2></div>
+    <a class="button button-light" href="mailto:hello@wampuslabs.com">Email Wampus Labs</a>
+  </div></section>
+</BaseLayout>

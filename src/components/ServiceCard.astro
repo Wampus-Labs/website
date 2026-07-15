@@ -1,0 +1,17 @@
+---
+interface Props {
+  number: string;
+  title: string;
+  summary: string;
+  href?: string;
+}
+
+const { number, title, summary, href = '/services' } = Astro.props;
+---
+
+<article class="service-card">
+  <span class="service-number" aria-hidden="true">{number}</span>
+  <h3>{title}</h3>
+  <p>{summary}</p>
+  <a href={href}>See what’s included <span aria-hidden="true">→</span></a>
+</article>

@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { services } from '../data/services';
+---
+
+<BaseLayout title="Services | Wampus Labs" description="Managed IT, automation and AI, managed digital signage, and custom software from Wampus Labs.">
+  <section class="page-hero section"><div class="container narrow">
+    <p class="eyebrow">Services</p><h1>Help with the technology your business actually uses.</h1>
+    <p>Pick one problem or hand us the whole messy list. We’ll help sort out what matters first.</p>
+  </div></section>
+  <section class="section service-list-section"><div class="container service-list">
+    {services.map((service) => <article class="service-detail">
+      <div class="service-title-row"><span class="service-number" aria-hidden="true">{service.number}</span><h2>{service.title}</h2></div>
+      <div><p class="service-summary">{service.summary}</p><ul class="check-list">{service.details.map((detail) => <li>{detail}</li>)}</ul></div>
+    </article>)}
+  </div></section>
+  <section class="section cta-section"><div class="container cta-box">
+    <div><p class="eyebrow">Not sure where it fits?</p><h2>That’s fine. Start with the problem.</h2></div>
+    <a class="button button-light" href="/contact">Get in touch</a>
+  </div></section>
+</BaseLayout>
