@@ -2,7 +2,7 @@ export const services = [
   {
     number: '01',
     title: 'Managed IT',
-    summary: 'Reliable day-to-day support, security, and Microsoft 365 help without the full-time IT hire.',
+    summary: 'Reliable  support, security, and Microsoft 365 help without the full-time IT hire.',
     details: [
       'Microsoft 365 setup and support',
       'Device monitoring and maintenance',
@@ -16,7 +16,7 @@ export const services = [
     summary: 'Less copying, clicking, and chasing. We find the repetitive work and make it run itself.',
     details: [
       'Workflow and approval automation',
-      'Microsoft Power Automate and SharePoint',
+      'Custom scripting and executables',
       'Practical AI tools and assistants',
       'System connections that cut out double entry',
     ],
@@ -26,7 +26,7 @@ export const services = [
     title: 'Managed Digital Signage',
     summary: 'Cloud-managed screens for menus, dashboards, announcements, and anything else worth showing.',
     details: [
-      'Small, dependable Raspberry Pi deployments',
+      'Small, dependable deployments',
       'Remote scheduling and screen management',
       'Lobby, menu, dashboard, and staff displays',
       'Setup, monitoring, and ongoing help',
@@ -37,7 +37,7 @@ export const services = [
     title: 'Custom Software',
     summary: 'Small, useful tools built around how your business actually works—not the other way around.',
     details: [
-      'Internal tools and simple web apps',
+      'Internal tools and web apps',
       'Dashboards and reporting',
       'Integrations and data cleanup',
       'Prototypes for ideas worth testing',
