@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wampuslabs.com/sitemap-index.xml
