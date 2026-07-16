@@ -10,6 +10,17 @@ interface Props {
 
 const { title, description } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, 'https://wampuslabs.com');
+const socialImage = new URL('/brand/wampus-social.png', canonicalURL);
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Wampus Labs LLC',
+  url: 'https://wampuslabs.com',
+  logo: 'https://wampuslabs.com/brand/wampus-mark.svg',
+  slogan: 'Putting technology to work.',
+  email: 'hello@wampuslabs.com',
+  areaServed: 'South-central Wisconsin',
+};
 ---
 
 <!doctype html>
@@ -19,10 +30,20 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://wampuslabs.com');
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#0b1220" />
+    <meta name="theme-color" content="#071827" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Wampus Labs" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={socialImage} />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
     <title>{title}</title>
   </head>
   <body>
