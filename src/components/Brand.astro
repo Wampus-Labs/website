@@ -3,7 +3,7 @@ interface Props { showTagline?: boolean; }
 const { showTagline = false } = Astro.props;
 ---
 <span class="brand" data-tagline={showTagline || undefined}>
-  <img class="brand-mark" src="/brand/wampus-mark.svg" alt="" width="52" height="52" />
+  <img class="brand-mark" src="/brand/wampus-mark.png" alt="" width="52" height="52" />
   <span class="brand-copy">
     <span class="brand-name">Wampus <strong>Labs</strong></span>
     {showTagline && <span class="brand-tagline">Putting technology to work.</span>}
